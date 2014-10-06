@@ -10,7 +10,7 @@
     <title>Accueil Administrateur</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,8 +45,8 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>   </h1>
-        <h2>Bootstrap starter template TEST</h2>
+        <h1> <br> </h1>
+        <h2>Page d'accueil Administrateur</h2>
         <p class="lead">CECI EST UN TEST.</p>
       </div>
 
