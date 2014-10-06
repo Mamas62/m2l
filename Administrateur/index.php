@@ -35,9 +35,10 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Accueil</a></li>
-            <li><a href="#about">A propos</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+            <li><a href="#Utilisateurs">Utilisateurs</a></li>
+            <li><a href="#Salles">Salles</a></li>
+            <li><a href="#Réservations">Réservations</a></li>
+          </ul><
         </div><!--/.nav-collapse -->
       </div>
     </div>
@@ -46,7 +47,7 @@
 
       <div class="starter-template">
         <h1> <br> </h1>
-        <h2>Page d'accueil Administrateur</h2>
+        <h2><center>Page d'accueil Administrateur</center></h2>
         <p class="lead">CECI EST UN TEST.</p>
       </div>
 
