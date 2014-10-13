@@ -34,9 +34,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../Administrateur/indexadmin.php">Accueil Usager</a></li>
-            <li><a href="../Administrateur/usagers.php">Utilisateurs</a></li>
-            <li><a href=../Administrateur/salles.php>Salles</a></li>
+            <li class="active"><a href="../Usager/indexusager.php">Accueil Usager</a></li>
+            <li><a href="../Usager/salles.php">Salles</a></li>
+            <li><a href=../Usager/reservation2.php>Réservations</a></li>
           </ul><
         </div><!--/.nav-collapse -->
       </div>
