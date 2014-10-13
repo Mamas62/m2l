@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -46,12 +47,68 @@
 
       <div class="starter-template">
         <h1> <br> </h1>
-        <h2><center>Page Salles</center></h2>
+        <h2><center>Salles</center></h2>
         <p class="lead">CECI EST UN TEST.</p>
       </div>
 
     </div><!-- /.container -->
-
+    
+    <div>
+        
+        <form method="post" action="index.php" role="form">
+				<div class="form-group">
+					<label for="choixDomaine">Choix du domaine</label>
+					<select name="choixDomaine" class="form-control ">
+						<option value="tous" selected>Tous les domaines</option>
+						<option value="multimedia">Multimédia</option>
+						<option value="reunion">Réunion</option>
+					</select>
+				</div>
+				<div class="from-group">
+					<label for="choixSalle">Choix de la salle</label>
+					<select name="choixSalle" class="form-control">
+						<option value="tous" selected>Toutes les salles</option>
+						<option value="amphitheatre">Amphithéâtre</option>
+						<option value="baccarat">Baccarat (Réunion)</option>
+						<option value="corbin">Corbin (Réunion)</option>
+						<option value="daum">Daum (Réunion)</option>
+						<option value="galle">Gallé (Réunion)</option>
+						<option value="lamour">Lamour (Réunion)</option>
+						<option value="longwy">Longwy (Réunion)</option>
+						<option value="majorelle">Majorelle (Réunion)</option>
+						<option value="multimedia">Multimédia</option>
+						<option value="reunion_etage">Réunion d'étage</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="hidden" name="envoye" value="oui" />
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default">Filtrer</button>
+				</div>
+			</form>
+    </div>
+    
+    
+    <div>
+    <table class="table table-centre table-responsive">
+        
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Maximum</th>
+           
+        </tr>
+        
+        <tr>
+            <td>Lucien Sapin</td>
+            <td>Amphithéâtre </td>
+            <td>500</td>
+            
+        </tr>
+        
+    </table>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
