@@ -47,7 +47,7 @@
 
       <div class="starter-template">
         <h1> <br> </h1>
-        <h2><center>Page Salles</center></h2>
+        <h2><center>Salles</center></h2>
         <p class="lead">CECI EST UN TEST.</p>
       </div>
 
@@ -91,20 +91,20 @@
     
     
     <div>
-    <table class="table table-centre">
+    <table class="table table-centre table-responsive">
         
         <tr>
             <th>Nom</th>
             <th>Description</th>
             <th>Maximum</th>
-            <th>Courriels des responsables</th>
+           
         </tr>
         
         <tr>
             <td>Lucien Sapin</td>
-            <td>Salle de </td>
-            <td>Peldi</td>
-            <td>37</td>
+            <td>Amphithéâtre </td>
+            <td>500</td>
+            
         </tr>
         
     </table>
