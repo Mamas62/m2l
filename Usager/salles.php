@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,26 +53,62 @@
 
     </div><!-- /.container -->
     
+    <div>
+        
+        <form method="post" action="index.php" role="form">
+				<div class="form-group">
+					<label for="choixDomaine">Choix du domaine</label>
+					<select name="choixDomaine" class="form-control ">
+						<option value="tous" selected>Tous les domaines</option>
+						<option value="multimedia">Multimédia</option>
+						<option value="reunion">Réunion</option>
+					</select>
+				</div>
+				<div class="from-group">
+					<label for="choixSalle">Choix de la salle</label>
+					<select name="choixSalle" class="form-control">
+						<option value="tous" selected>Toutes les salles</option>
+						<option value="amphitheatre">Amphithéâtre</option>
+						<option value="baccarat">Baccarat (Réunion)</option>
+						<option value="corbin">Corbin (Réunion)</option>
+						<option value="daum">Daum (Réunion)</option>
+						<option value="galle">Gallé (Réunion)</option>
+						<option value="lamour">Lamour (Réunion)</option>
+						<option value="longwy">Longwy (Réunion)</option>
+						<option value="majorelle">Majorelle (Réunion)</option>
+						<option value="multimedia">Multimédia</option>
+						<option value="reunion_etage">Réunion d'étage</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="hidden" name="envoye" value="oui" />
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default">Filtrer</button>
+				</div>
+			</form>
+    </div>
     
-    <table class="table">
+    
+    <div>
+    <table class="table table-centre">
         
         <tr>
             <th>Nom</th>
             <th>Description</th>
             <th>Maximum</th>
             <th>Courriels des responsables</th>
-            
         </tr>
         
         <tr>
-            <td>Giacomo Guillizani</td>
-            <td>37</td>
+            <td>Lucien Sapin</td>
+            <td>Salle de </td>
             <td>Peldi</td>
             <td>37</td>
         </tr>
         
     </table>
-
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
