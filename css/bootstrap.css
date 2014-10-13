@@ -12,6 +12,7 @@ html {
 }
 body {
   margin: 0;
+  padding-top:70px;
 }
 article,
 aside,
@@ -4188,7 +4189,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #001F42;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
