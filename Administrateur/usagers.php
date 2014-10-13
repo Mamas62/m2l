@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">M2L</a>
+            <a class="navbar-brand" href="../Login.php">M2L</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -47,6 +47,7 @@
       <div class="starter-template">
         <h1> <br> </h1>
         <h2><center>Page Utilisateurs</center></h2>
+        <h3><left><img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L"></left></h3> 
         <p class="lead">CECI EST UN TEST.</p>
       </div>
 
