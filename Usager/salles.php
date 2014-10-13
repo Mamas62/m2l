@@ -51,6 +51,26 @@
       </div>
 
     </div><!-- /.container -->
+    
+    
+    <table class="table">
+        
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Maximum</th>
+            <th>Courriels des responsables</th>
+            
+        </tr>
+        
+        <tr>
+            <td>Giacomo Guillizani</td>
+            <td>37</td>
+            <td>Peldi</td>
+            <td>37</td>
+        </tr>
+        
+    </table>
 
 
     <!-- Bootstrap core JavaScript
