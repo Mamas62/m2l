@@ -34,11 +34,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../Administrateur/index.php">Accueil</a></li>
+            <li class="active"><a href="../Administrateur/indexadmin.php">Accueil Administrateur</a></li>
             <li><a href="../Administrateur/usagers.php">Utilisateurs</a></li>
             <li><a href=../Administrateur/salles.php>Salles</a></li>
-            <li><a href=../Administrateur/reservations.php>Réservations</a></li>
-            // href #Reservations par exemple
           </ul><
         </div><!--/.nav-collapse -->
       </div>
