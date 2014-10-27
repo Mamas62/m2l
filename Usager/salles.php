@@ -101,7 +101,7 @@
         
         <tr>
             <td>Lucien Sapin</td>
-            <td>Amphithéâtre </td>
+            <td>Amphithéâtre</td>
             <td>200</td>
             
         </tr>
