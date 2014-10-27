@@ -48,7 +48,6 @@
       <div class="starter-template">
         <h1> <br> </h1>
         <h2><center>Salles</center></h2>
-        <p class="lead">CECI EST UN TEST.</p>
       </div>
 
     </div><!-- /.container -->
@@ -103,7 +102,14 @@
         <tr>
             <td>Lucien Sapin</td>
             <td>Amphithéâtre </td>
-            <td>500</td>
+            <td>200</td>
+            
+        </tr>
+        
+        <tr>
+            <td>Grégory Leplafond</td>
+            <td>Salle Lamour</td>
+            <td>50</td>
             
         </tr>
         
