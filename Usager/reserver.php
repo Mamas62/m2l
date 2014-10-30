@@ -53,18 +53,18 @@
         
         
 
-      <div class="starter-template">
+      <div class="starter-template text-center">
           <div class="col-md-3">
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
         <h1> <br> </h1>
-        <h2><center>Page Reservation</center></h2>
+        <h2>Page Reservation</h2>
         
       </div>
         <form method="post" action="index.php" role="form">
 				<div class="form-group container jumbotron text-center">
 					<label for="choixSalle">Salle:</label>
-					<select class="input-sm" name="choixSalle" class="form-control">
+					<select class="input-sm" id="choixSalle">
 						<option value="amphitheatre">Amphithéâtre</option>
 						<option value="baccarat">Baccarat (Réunion)</option>
 						<option value="corbin">Corbin (Réunion)</option>
@@ -78,13 +78,13 @@
 					</select>
                                         
                                         <label for="date_reserv">Date</label>
-                                        <input class=input-sm" type="date" name="date_reserv">
+                                        <input class="input-sm" type="date" id="date_reserv">
                                         
                                          <label for="heure_debut">Heure début</label>
-                                         <input class="input-sm" type="time" name="heure_debut">
+                                         <input class="input-sm" type="time" id="heure_debut">
                                          
                                          <label for="heure_fin">Heure fin</label>
-                                         <input class="input-sm" type="time" name="heure_fin">
+                                         <input class="input-sm" type="time" id="heure_fin">
                                          
                                          <div class="form-group">
 					<input type="hidden" name="envoye" value="oui" />
@@ -99,6 +99,7 @@
                                          </div>
             
               </div>
+        </form>
             
             <div class="form-group container jumbotron text-center">
                 

@@ -53,9 +53,9 @@
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
 
-      <div class="starter-template">
+      <div class="starter-template text-center">
         <h1> <br> </h1>
-        <h2><center>Salles</center></h2>
+        <h2>Salles</h2>
       </div>
 
     </div><!-- /.container -->
@@ -65,7 +65,7 @@
         <form method="post" action="index.php" role="form">
 				<div class="form-group">
 					<label for="choixDomaine">Choix du domaine</label>
-					<select name="choixDomaine" class="form-control ">
+					<select id="choixDomaine" class="form-control ">
 						<option value="tous" selected>Tous les domaines</option>
 						<option value="multimedia">Multimédia</option>
 						<option value="reunion">Réunion</option>
@@ -73,7 +73,7 @@
 				</div>
 				<div class="from-group">
 					<label for="choixSalle">Choix de la salle</label>
-					<select name="choixSalle" class="form-control">
+					<select id="choixSalle" class="form-control">
 						<option value="tous" selected>Toutes les salles</option>
 						<option value="amphitheatre">Amphithéâtre</option>
 						<option value="baccarat">Baccarat (Réunion)</option>

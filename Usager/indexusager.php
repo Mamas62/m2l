@@ -53,9 +53,9 @@
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
         
-      <div class="starter-template">
+      <div class="starter-template text-center">
         <h1> <br> </h1>
-        <h2><center>Page d'accueil usager</center></h2>
+        <h2>Page d'accueil usager</h2>
         <p class="lead text-center">Bonjour Gergory Leplafond !</p>
       </div>
 
