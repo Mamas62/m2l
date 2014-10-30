@@ -60,7 +60,7 @@
                 </div>
                 
                 <div class="col-md-9 text-center">
-                    <p class="lead"></p>
+                    <p class="lead">Bienvenue User1 !</p>
                 </div>                
             </div>
             <div class="row">
