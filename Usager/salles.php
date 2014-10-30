@@ -49,6 +49,9 @@
     </div>
 
     <div class="container">
+        <div class="col-md-3">
+                    <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
+                </div>
 
       <div class="starter-template">
         <h1> <br> </h1>

@@ -47,9 +47,16 @@
       </div>
     </div>
 
+      
+      
     <div class="container">
+        
+        
 
       <div class="starter-template">
+          <div class="col-md-3">
+                    <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
+                </div>
         <h1> <br> </h1>
         <h2><center>Page Reservation</center></h2>
         
