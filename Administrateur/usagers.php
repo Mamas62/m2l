@@ -59,7 +59,7 @@
                 </div>
                                 
                 <div class="col-md-9 text-center">
-                    <p class="lead">DECALAGE DE TEXTE SUR LA DROITE.</p>
+                    <p class="lead">.</p>
                 </div>
             </div>
             <div class="row">
@@ -77,5 +77,60 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    <div class="container">
+        <h2>Liste des utilisateurs</h2>
+    <table class="table table-hover text-center" style="margin-top: 20px;">
+        <thead>
+            <tr class="success">
+            <th class="text-capitalize text-center">Nom</th>
+            <th class="text-capitalize text-center">Prenom</th>
+            <th class="text-capitalize text-center">Numero</th>
+            <th class="text-capitalize text-center">Email</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            
+            <tr>
+            <td>User1</td>
+            <td></td>
+            <td>0</td>
+            <td>user1@hotmail.fr</td>
+            </tr>
+
+            <tr>
+            <td>Stark</td>
+            <td>Tony</td>
+            <td>1</td>
+            <td>tonystark@hotmail.fr</td>
+            </tr>
+
+            <tr>
+            <td>Rogers</td>
+            <td>Steve</td>
+            <td>2</td>
+            <td>steverogers@hotmail.fr</td>
+            </tr>
+
+            <tr>
+            <td>Barton</td>
+            <td>Clin</td>
+            <td>3</td>
+            <td>clinbarton@hotmail.fr</td>
+            </tr>
+
+            <tr>
+            <td>Banner</td>
+            <td>Bruce</td>
+            <td>4</td>
+            <td>brucebanner@hotmail.fr</td>
+            </tr>
+        </tbody>
+        
+     <div class="control-group">
+        <input type="hidden" name="filtrer" value="ok" />
+        <button type="submit" class="btn btn-default">Filtrer</button>
+     </div>
 </body>
 </html>
