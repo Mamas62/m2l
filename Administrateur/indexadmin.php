@@ -39,6 +39,12 @@
                         <li><a href=../Administrateur/salles.php>Salles</a></li>
                         <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
+                        <li ><a href="#">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                    </ul>
+                    
                 </div><!--/.nav-collapse -->
             </div>
         </div>
@@ -48,12 +54,7 @@
                 <div class="col-md-3">
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
-                
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
-                <li class="active"><a href=#>Se déconnecter <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-            </ul>
-                
+                                
                 <div class="col-md-9">
                     <h1 class="text-center" style="margin-bottom: 40px;">Page d'accueil Administrateur</h1>
                 </div>
