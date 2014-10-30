@@ -41,7 +41,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Grégory Leplafond(user)</a></li>
-          <li ><a href="../index.php">Deconnexion</a></li>
+         <li ><a href="#">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
