@@ -37,7 +37,12 @@
             <li class="active"><a href="../Usager/indexusager.php">Accueil Usager</a></li>
             <li><a href="../Usager/salles.php">Salles</a></li>
             <li><a href=../Usager/reservation2.php>Réservations</a></li>
-          </ul><
+            <li><a href="../Usager/reserver.php">Réserver</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Grégory Leplafond(user)</a></li>
+          <li ><a href="../index.php">Deconnexion</a></li>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
