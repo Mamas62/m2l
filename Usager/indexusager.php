@@ -52,7 +52,7 @@
       <div class="starter-template">
         <h1> <br> </h1>
         <h2><center>Page d'accueil usager</center></h2>
-        <p class="lead">CECI EST UN TEST.</p>
+        <p class="lead text-center">Bonjour Gergory Leplafond !</p>
       </div>
 
     </div><!-- /.container -->
