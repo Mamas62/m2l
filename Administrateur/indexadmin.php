@@ -23,7 +23,8 @@
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                   
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -31,7 +32,7 @@
                     </button>
                     <a class="navbar-brand" href="../Login.php">M2L</a>
                 </div>
-                <div class="collapse navbar-collapse">
+                <div class="navbar-collapse collapse navbar-responsive-collapse">    
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../Administrateur/indexadmin.php">Accueil Administrateur</a></li>
                         <li><a href="../Administrateur/usagers.php">Utilisateurs</a></li>
@@ -47,18 +48,20 @@
                 <div class="col-md-3">
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
+                
+                <div class="col-md-9 text-right">                       
+                     <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown"><a href="../Administrateur/indexadmin.php" class="dropdown-toggle" data-toggle="dropdown">User1 <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                     </ul>       
+                </div>
+                
                 <div class="col-md-9">
                     <h1 class="text-center" style="margin-bottom: 40px;">Page d'accueil Administrateur</h1>
                 </div>
                 
                 <div class="col-md-9 text-center">
                     <p class="lead"></p>
-                </div>
-                
-                <div class="col-md-9 text-right">
-                    <p class="lead">Connexion - J'attends yohan !</p>
-                    
-                </div>
+                </div>                
             </div>
             <div class="row">
 
