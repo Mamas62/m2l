@@ -52,7 +52,12 @@
                 </div>
                 
                 <div class="col-md-9 text-center">
-                    <p class="lead">DECALAGE DE TEXTE SUR LA DROITE.</p>
+                    <p class="lead"></p>
+                </div>
+                
+                <div class="col-md-9 text-right">
+                    <p class="lead">Connexion - J'attends yohan !</p>
+                    
                 </div>
             </div>
             <div class="row">

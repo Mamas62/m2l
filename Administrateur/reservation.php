@@ -53,7 +53,7 @@
                 </div>
                 
                 <div class="col-md-9 text-center">
-                    <p class="lead">DECALAGE DE TEXTE SUR LA DROITE.</p>
+                    <p class="lead"></p>
                     <p class="lead">PAGE A FAIRE PAR YOHAN</p>
                 </div>
             </div>
