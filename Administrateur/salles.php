@@ -60,7 +60,7 @@
                 </div>
                 
                 <div class="col-md-9 text-center">
-                    <p class="lead">DECALAGE DE TEXTE SUR LA DROITE.</p>
+                    <p class="lead"></p>
                 </div>
             </div>
             <div class="row">
@@ -78,5 +78,55 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+        <div class="container theme-showcase" role="main">
+            
+            <div class="control-group">
+                
+                <br/>
+                
+                <label for="choixJour">Choix du jour :</label>
+                <input type="text" class="form-control form-fix" id="choixJour" />
+                
+                <br/>
+
+                <label class="control-label"for="usagers">
+                Choix de l'utilisateur :
+                </label>
+
+                <select name="usagers" class="form-control">
+                <option value="1">User1</option>
+                <option value="2">Tony Stark</option>
+                <option value="3">Steve Rogers</option>
+                <option value="4">Clin Barton</option>
+                <option value="5">Bruce Banner</option>
+                </select>
+                
+                <br/>
+                
+                <label class="control-label"for="salles">
+                Choix de la salle :
+                </label>
+
+                <select name="salles" class="form-control">
+                <option value="1">Salle 1</option>
+                <option value="2">Salle 2</option>
+                <option value="3">Salle 3</option>
+                </select>
+                
+            </div>
+            
+             <br/>
+             
+            <div class="control-group">
+                 <input type="hidden" name="filtrer" value="ok" />
+                 <button type="submit" class="btn btn-default">Filtrer</button>
+            </div>
+            
+        </div>
+    
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+
 </body>
 </html>
