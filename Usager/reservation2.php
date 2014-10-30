@@ -47,8 +47,48 @@
       <div class="starter-template">
         <h1> <br> </h1>
         <h2><center>Page Reservation</center></h2>
-        <p class="lead">CECI EST UN TEST.</p>
+        
       </div>
+        <form method="post" action="index.php" role="form">
+				<div class="form-group container jumbotron text-center">
+					<label for="choixSalle">Salle:</label>
+					<select class="input-sm" name="choixSalle" class="form-control">
+						<option value="amphitheatre">Amphithéâtre</option>
+						<option value="baccarat">Baccarat (Réunion)</option>
+						<option value="corbin">Corbin (Réunion)</option>
+						<option value="daum">Daum (Réunion)</option>
+						<option value="galle">Gallé (Réunion)</option>
+						<option value="lamour">Lamour (Réunion)</option>
+						<option value="longwy">Longwy (Réunion)</option>
+						<option value="majorelle">Majorelle (Réunion)</option>
+						<option value="multimedia">Multimédia</option>
+						<option value="reunion_etage">Réunion d'étage</option>
+					</select>
+                                        
+                                        <label for="date_reserv">Date</label>
+                                        <input class=input-sm" type="date" name="date_reserv">
+                                        
+                                         <label for="heure_debut">Heure début</label>
+                                         <input class="input-sm" type="time" name="heure_debut">
+                                         
+                                         <label for="heure_fin">Heure fin</label>
+                                         <input class="input-sm" type="time" name="heure_fin">
+                                         
+                                         <div class="form-group">
+					<input type="hidden" name="envoye" value="oui" />
+                                         </div>
+                                         
+                                         
+                                         
+                                         <div class="form-group navbar-btn ">
+                                             
+                                            <button type="submit" class="btn btn-default">Verifier la disponibilité</button>
+                                             
+                                         </div>
+            
+              </div>
+            
+            
 
     </div><!-- /.container -->
 
