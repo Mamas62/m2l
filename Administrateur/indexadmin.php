@@ -36,6 +36,7 @@
                         <li class="active"><a href="../Administrateur/indexadmin.php">Accueil Administrateur</a></li>
                         <li><a href="../Administrateur/usagers.php">Utilisateurs</a></li>
                         <li><a href=../Administrateur/salles.php>Salles</a></li>
+                        <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

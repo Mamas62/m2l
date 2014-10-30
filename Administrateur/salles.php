@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Accueil Administrateur</title>
+        <title>Salles Administrateurs</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../css/bootstrap.css" rel="stylesheet">
@@ -36,6 +36,7 @@
             <li><a href=../Administrateur/indexadmin.php>Accueil Administrateur</a></li>
             <li><a href="../Administrateur/usagers.php">Utilisateurs</a></li>
             <li class="active"><a href="../Administrateur/salles.php">Salles</a></li>
+            <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
