@@ -49,11 +49,10 @@
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
                 
-                <div class="col-md-9 text-right">                       
-                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown"><a href="../Administrateur/indexadmin.php" class="dropdown-toggle" data-toggle="dropdown">User1 <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-                     </ul>       
-                </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
+                <li class="active"><a href=#>Se déconnecter <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+            </ul>
                 
                 <div class="col-md-9">
                     <h1 class="text-center" style="margin-bottom: 40px;">Page d'accueil Administrateur</h1>
