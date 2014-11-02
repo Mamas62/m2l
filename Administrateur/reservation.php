@@ -40,6 +40,11 @@
             <li class="active"><a href="../Administrateur/reservation.php">Réservations</a></li>
             
                     </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
+                        <li ><a href="#">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                    </ul>
+                    
                 </div><!--/.nav-collapse -->
             </div>
         </div>
@@ -53,13 +58,69 @@
                     <h1 class="text-center" style="margin-bottom: 40px;">Page des Réservations </h1>
                 </div>
                 
-                <div class="col-md-9 text-center">
+                <div class="col-md-9 text-left">
+                  
+                    <p class="lead"><label>Choix du jour:</label><php>
+                        <input type="date" max="2018-12-31" min="1995-01-01" name="the_date">
+                    </php>
+                        </p>
+                   
+                
+                
+               
                     <p class="lead"></p>
-                    <p class="lead">PAGE A FAIRE PAR YOHAN</p>
+                 <p class="lead">    <label for="choixSalle">Choix de la salle:</label>
+                     
+					<select class="input-sm" id="choixSalle">
+						<option value="amphitheatre">Amphithéâtre</option>
+						<option value="baccarat">Baccarat (Réunion)</option>
+						<option value="corbin">Corbin (Réunion)</option>
+						<option value="daum">Daum (Réunion)</option>
+						<option value="galle">Gallé (Réunion)</option>
+						<option value="lamour">Lamour (Réunion)</option>
+						<option value="longwy">Longwy (Réunion)</option>
+						<option value="majorelle">Majorelle (Réunion)</option>
+						<option value="multimedia">Multimédia</option>
+						<option value="reunion_etage">Réunion d'étage</option>
+					</select>
+                 </p>
+                    
+               
+                    <p class="lead"></p>
+                    <p class="lead">
+                        <label for="choixUser">
+                            Choix de l'utilisateur:
+                        </label>
+                        <select class="input-sm" id="choixUser">
+                            <option value='user1'>User 1</option>
+                            <option value='user2'>User 2</option>
+                            <option value='user3'>User 3</option>
+                        </select>
+                    </p>
+                    
+                    
+                    
+                    
+                    <br>
+                <br>
+                <br>  
+                    
                 </div>
+              
+               <div class="col-md-11 text-right">
+                   <h3>  <strong>
+                        Affichage en fonction du critère de selection
+                  
+                     <br>
+                     Si pas de filtre, affichage pouvant être trié par colonne par le client.
+                       </strong> </h3>
+                    
+                </div>
+                
             </div>
+           
             <div class="row">
-
+  
             </div>
 
         </div>
