@@ -11,7 +11,7 @@
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
@@ -32,61 +32,44 @@
     <div class="container">
 
       <!-- Static navbar -->
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-              <a class="navbar-brand" href="Login.php">M2L</a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Accueil</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usagers <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Salle </a></li>
-                  <li><a href="#">Reservations</a></li>
-                  <li><a href="#">Reserver</a></li>
-                </ul>
-              </li>
-                <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrateurs <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="usagers.php">Usagers </a></li>
-                  <li><a href="reservation.php">Reservations</a></li>
-                  <li><a href="salles.php">Salle</a></li>
-                </ul>
-              </li>
-            </ul>
-    
-             <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <li><a class="navbar-brand" href="Login.php">M2L</a></li> 
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="Administrateur/indexadmin.php">Partie Administrateur</a></li>
+              <li><a href="Usager/indexusager.php">Partie Utilisateur</a></li>
+           
+          </ul>
+  <ul class="nav navbar-nav navbar-right">
+          
+      <li ><a href="../m2l/Connexion.php">Deconnexion <img src="../m2l/img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+          </ul>
             
-          </div><!--/.nav-collapse -->
+          </div>
+           
+       
         </div><!--/.container-fluid -->
+ 
       </div>
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+        <div class="row">
+        <div class="col-md-1 img-responsive">
+            <img src="../m2l/img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L"> 
+                </div>
+         </div>
+      <div class="row">
+          <div class="col-md-10 text-right">
+              <h2><strong>Bienvenue sur le site de la Maison des Ligues de Lorraine</strong>  </h2>
+          </div>
       </div>
-
     </div> <!-- /container -->
 
 
