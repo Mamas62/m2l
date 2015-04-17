@@ -1,5 +1,17 @@
+<?php
+
+echo('
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr">');
+
+if(isset($_POST["validation"]))
+{
+	echo ('<meta http-equiv="refresh" content="0;url="http://localhost/m2lProjet/Usager/reserver.php" ');
+}
+
+echo('
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,17 +86,38 @@
 						<option value="longwy">Longwy (Réunion)</option>
 						<option value="majorelle">Majorelle (Réunion)</option>
 						<option value="multimedia">Multimédia</option>
-						<option value="reunion_etage">Réunion d'étage</option>
+						<option value="reunion_etage">Réunion d étage</option>
 					</select>
+					
+					
+					<label for="choixType">Type:</label>
+					<select class="input-sm" id="choixType">
+						<option value="amphitheatre">Régulier</option>
+						<option value="reunion_etage">Occasionnel</option>
+					</select>
+					
+					
+					</br>
+					
                                         
-                                        <label for="date_reserv">Date</label>
-                                        <input class="input-sm" type="date" id="date_reserv">
+                                        <label for="date_deb_reserv">Date debut</label>
+                                        <input class="input-sm" type="date" id="date_deb_reserv">
                                         
                                          <label for="heure_debut">Heure début</label>
                                          <input class="input-sm" type="time" id="heure_debut">
+										 
+										 <label for="date_fin_reserv">Date fin</label>
+                                        <input class="input-sm" type="date" id="date_fin_reserv">
                                          
                                          <label for="heure_fin">Heure fin</label>
                                          <input class="input-sm" type="time" id="heure_fin">
+										 
+										 
+										 </br>
+										 <label for="confirmation">Etat de la confirmation:</label>
+										 <input class="input-sm" type="radio" name="confirmation" value="confirme" id="cofirmation">Confirmé
+										 <input class="input-sm" type="radio" name="confirmation" value="provisoire" id="cofirmation">Provisoire
+										 
                                          
                                          <div class="form-group">
 					<input type="hidden" name="envoye" value="oui" />
@@ -94,14 +127,37 @@
                                          
                                          <div class="form-group navbar-btn ">
                                              
-                                            <button type="submit" class="btn btn-default">Verifier la disponibilité</button>
+                                            
                                              
                                          </div>
             
               </div>
+			  
+			  <div class="form-group container jumbotron text-center">
+			  
+			  <label for="typePeriodicite">Type de périodicité :</label>
+			  <input type="radio" name="periodicite" value="aucune" id="typePeriodicite">Aucune
+			  <input type="radio" name="periodicite" value="jour" id="typePeriodicite">Jour
+			  <input type="radio" name="periodicite" value="semaine" id="typePeriodicite">Semaine
+			  <input type="radio" name="periodicite" value="mois" id="typePeriodicite">Mois
+			  <input type="radio" name="periodicite" value="annee" id="typePeriodicite">Annee
+			  <input type="radio" name="periodicite" value="moisJourSemaine" id="typePeriodicite">Mois, même jour semaine
+			  <input type="radio" name="periodicite" value="nSemaine" id="typePeriodicite">toutes les n semaines
+			  
+			  </br>
+			   <label for="date_fin_periodicite">Date de fin de périodicité :</label>
+               <input class="input-sm" type="date" id="date_fin_periodicite">
+			  
+			  </div>
+			  
         </form>
+		
+		
             
             <div class="form-group container jumbotron text-center">
+			
+				<label for="breveDescription">Brève description</label>
+               <textarea class="form-control " id="breveDescription" rows="1"></textarea>
                 
                 <label for="description">Description</label>
                <textarea class="form-control " id="description" rows="3"></textarea>
@@ -110,7 +166,7 @@
             
             <div class="form-group text-center">
                 
-                <button type="submit" class="btn btn-default">Valider</button> 
+                <input type="submit" value="valider" class="btn btn-default" name="validation">
                 
             </div>
             
@@ -125,4 +181,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </body>
-</html>
+</html> ');
+
+?>

@@ -1,3 +1,14 @@
+<?php
+
+$bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+
+$requete = $bdd->query('SELECT nomAnimateur, prenomAnimateur, room_name, capacity FROM mrbs_reservation r INNER JOIN mrbs_room ro ON r.idSalle=ro.id ');
+
+
+
+        
+
+echo('
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -84,7 +95,7 @@
 						<option value="longwy">Longwy (Réunion)</option>
 						<option value="majorelle">Majorelle (Réunion)</option>
 						<option value="multimedia">Multimédia</option>
-						<option value="reunion_etage">Réunion d'étage</option>
+						<option value="reunion_etage">Réunion d étage</option>
 					</select>
 				</div>
 				<div class="form-group">
@@ -107,17 +118,22 @@
            
         </tr>
         
-        <tr>
-            <td>Lucien Sapin</td>
-            <td>Amphithéâtre</td>
-            <td>200</td>
+        ');
+
+while ($donnee = $requete->fetch())
+{echo('
+            <tr>
+            <td>'.$donnee['nomAnimateur'].' '.$donnee['prenomAnimateur'].'</td>
+            <td>'.$donnee['room_name'].'</td>
+            <td>'.$donnee['capacity'].'</td>
+            </tr>');
+}
+
+echo('
             
-        </tr>
+       
         
-        <tr>
-            <td>Grégory Leplafond</td>
-            <td>Salle Lamour</td>
-            <td>50</td>
+        
             
         </tr>
         
@@ -131,5 +147,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </body>
-</html>
+</html>');
  
+
+?>
