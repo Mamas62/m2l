@@ -11,7 +11,7 @@ echo('
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Usagers Administrateurs</title>
+        <title>Modifier usagers Administrateurs</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../css/bootstrap.css" rel="stylesheet">
@@ -60,7 +60,7 @@ echo('
                 </div>
                 
                 <div class="col-md-9">
-                    <h1 class="text-center" style="margin-bottom: 40px;">Page des Utilisateurs</h1>
+                    <h1 class="text-center" style="margin-bottom: 40px;">Modifier un utilisateur</h1>
                 </div>
                                 
                 <div class="col-md-9 text-center">
@@ -83,43 +83,7 @@ echo('
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     
-    <div class="container">
-        <h2>Liste des utilisateurs</h2>
-    <table class="table table-hover text-center" style="margin-top: 20px;">
-        <thead>
-            <tr class="success">
-            <th class="text-capitalize text-center">Droits</th>
-            <th class="text-capitalize text-center">Nom</th>
-            <th class="text-capitalize text-center">Adresse courriel</th>
-            </tr>
-        </thead>
         
-        <tbody>
-            ');
-            while ($donnee = $requete->fetch())
-            {
-                if($donnee['level']== 2){
-                    $maVar = "Admin";
-                }
-                else{
-                    $maVar = "User";
-                }
-                echo('
-            <tr>
-            <td>'.$maVar.'</td>
-            <td>'.$donnee['name'].'</td>
-            <td>'.$donnee['email'].'</td>
-            </tr>
-            ');
-            }
-            echo('
-            
-        </tbody>
-        
-     <div class="control-group">
-        <input type="hidden" name="filtrer" value="ok" />
-        <button type="submit" class="btn btn-default">Filtrer</button>
-     </div>
 </body>
 </html>
 ');

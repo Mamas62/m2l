@@ -66,14 +66,34 @@
                 </div>
          </div>
       <div class="row">
-          <div class="col-md-10 text-right">
+          <div class="col-md-12 text-center">
               <h2><strong>Bienvenue sur le site de la Maison des Ligues de Lorraine</strong>  </h2>
           </div>
-          <div class="col-md-10 text-center">
+          <div class="col-md-12 text-center">
               <h4><a href="http://localhost/PPE/m2lperso/m2l/monAPK/appliFredi.apk">TELECHARGER L'APPLICATION</a></h4>
           </div>
+          
       </div>
-    </div> <!-- /container -->
+      
+      
+            </div>
+        </div>
+            <div class="row">
+                 <div class="col-md-12 text-center">
+                     <h3><strong></strong></h3><br>
+                     <h3><strong> Veuillez vous identifier :</strong></h3><br>
+                     <p class="lead"><label>Nom d'utilisateur :</label>
+                         <input type="text">
+
+                   </p>
+                   <p class="lead"><label>Mot de passe :</label>
+                         <input type="text">
+
+                   </p>
+                   <div class='col-md-12 text-center'> 
+                       <button><a href="Login.php">Connexion</a></button>
+                   </div>
+          </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
