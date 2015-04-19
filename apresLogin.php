@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
 if (!isset($_SESSION['pseudo'])) {
 	header ('Location: Login.php');
 	exit();

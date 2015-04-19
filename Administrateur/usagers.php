@@ -51,9 +51,10 @@ $requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
             <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">          
-                <li ><a href="../m2l/Login.php"> [ <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> ] Deconnexion <img src="../m2l/img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-                  </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>[ <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> ]</a></li>
+                        <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                    </ul>
 
                 </div><!--/.nav-collapse -->
             </div>
@@ -94,6 +95,7 @@ $requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
     <table class="table table-hover text-center" style="margin-top: 20px;">
         <thead>
             <tr class="success">
+                <th class="text-capitalize text-center">Action</th>
             <th class="text-capitalize text-center">Droits</th>
             <th class="text-capitalize text-center">Nom</th>
             <th class="text-capitalize text-center">Adresse courriel</th>
@@ -112,6 +114,7 @@ $requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
                 }
                 echo('
             <tr>
+            <td>'.'</td>
             <td>'.$maVar.'</td>
             <td>'.$donnee['name'].'</td>
             <td>'.$donnee['email'].'</td>
@@ -125,5 +128,9 @@ $requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
         <input type="hidden" name="filtrer" value="ok" />
         <button type="submit" class="btn btn-default">Filtrer</button>
      </div>
+        
+        <FORM ACTION="../Administrateur/creationusagers.php">
+        <INPUT TYPE="SUBMIT" VALUE="Ajouter un nouvel utilisateur"></FORM>
+
 </body>
 </html>

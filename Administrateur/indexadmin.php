@@ -13,6 +13,7 @@ if (!isset($_SESSION['pseudo'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
 
         <title>Accueil Administrateur</title>
 
@@ -38,7 +39,7 @@ if (!isset($_SESSION['pseudo'])) {
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="../Login.php">M2L</a>
-                </div>
+                </div>                
                 <div class="navbar-collapse collapse navbar-responsive-collapse">    
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../Administrateur/indexadmin.php">Accueil Administrateur</a></li>
@@ -47,10 +48,11 @@ if (!isset($_SESSION['pseudo'])) {
                         <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">          
-            <li ><a href="../m2l/Login.php"> [ <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> ] Deconnexion <img src="../m2l/img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-              </ul>
-              </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>[ <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> ]</a></li>
+                        <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                    </ul>
+                      </div>
                     
                 </div><!--/.nav-collapse -->
             </div>
