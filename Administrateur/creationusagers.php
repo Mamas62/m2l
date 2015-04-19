@@ -106,11 +106,11 @@ if (!isset($_SESSION['pseudo'])) {
         </tr>
         <tr align="center">
           <td>Mot de passe : </td>
-          <td><input type="text" name="password"></td>
+          <td><input type="password" name="password"></td>
         </tr>
         <tr align="center">
           <td>Retaper mot de passe :</td>
-          <td><input type="text" name="password2"></td>
+          <td><input type="password" name="password2"></td>
         </tr>
         <tr align="center">
           <td>Droits (Indiquer 2 pour un compte admin.) :</td>
