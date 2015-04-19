@@ -43,18 +43,6 @@
           </button>
             <li><a class="navbar-brand" href="Login.php">M2L</a></li> 
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-              <li><a href="Administrateur/indexadmin.php">Partie Administrateur</a></li>
-              <li><a href="Usager/indexusager.php">Partie Utilisateur</a></li>
-           
-          </ul>
-  <ul class="nav navbar-nav navbar-right">
-          
-      <li ><a href="../m2l/Connexion.php">Deconnexion <img src="../m2l/img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-          </ul>
-            
-          </div>
            
        
         </div><!--/.container-fluid -->
@@ -82,17 +70,53 @@
                  <div class="col-md-12 text-center">
                      <h3><strong></strong></h3><br>
                      <h3><strong> Veuillez vous identifier :</strong></h3><br>
-                     <p class="lead"><label>Nom d'utilisateur :</label>
-                         <input type="text">
+                     <form action="Login.php" method="post">
+                    Pseudo: <input type="text" name="pseudo" value="" />
 
-                   </p>
-                   <p class="lead"><label>Mot de passe :</label>
-                         <input type="text">
+                    Mot de passe: <input type="password" name="mot_de_passe" value="" />
 
-                   </p>
-                   <div class='col-md-12 text-center'> 
-                       <button><a href="Login.php">Connexion</a></button>
-                   </div>
+                    <input type="submit" name="connexion" value="Connexion" />
+                </form>
+            <?php
+
+    session_start(); // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
+    if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
+        // on vérifie que le champ "Pseudo" n'est pas vide
+        // empty vérifie à la fois si le champ est vide et si le champ existe belle et bien (is set)
+        if(empty($_POST['pseudo'])) {
+            echo "Le champ Pseudo est vide.";
+        } else {
+            // on vérifie maintenant si le champ "Mot de passe" n'est pas vide"
+            if(empty($_POST['mot_de_passe'])) {
+                echo "Le champ Mot de passe est vide.";
+            } else {
+                // les champs sont bien posté et pas vide, on sécurise les données entrées par le membre:
+                $Pseudo = htmlentities($_POST['pseudo'], ENT_QUOTES, "ISO-8859-1"); // le htmlentities() passera les guillemets en entités HTML, ce qui empêchera les injections SQL
+                $MotDePasse = htmlentities(md5($_POST['mot_de_passe']), ENT_QUOTES, "ISO-8859-1");
+                //on se connecte à la base de données:
+                $mysqli = mysqli_connect("localhost", "root", "", "mrbs");
+                //on vérifie que la connexion s'effectue correctement:
+                if(!$mysqli){
+                    echo "Erreur de connexion à la base de données.";
+                } else {
+                    // on fait maintenant la requête dans la base de données pour rechercher si ces données existe et correspondent:
+                    $Requete = mysqli_query($mysqli,"SELECT * FROM mrbs_users WHERE name = '".$Pseudo."' AND password = '".$MotDePasse."'");
+                    // si il y a un résultat, mysqli_num_rows() nous donnera alors 1
+                    // si mysqli_num_rows() retourne 0 c'est qu'il a trouvé aucun résultat
+                    if(mysqli_num_rows($Requete) == 0) {
+                        echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                    } else {
+                        // on ouvre la session avec $_SESSION:
+                        $_SESSION['pseudo'] = $Pseudo; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
+                        echo "Vous êtes à présent connecté !";
+                        header('Location: apresLogin.php');
+                        exit();
+                    }
+                }
+            }
+        }
+    }
+    ?>
           </div> <!-- /container -->
 
 

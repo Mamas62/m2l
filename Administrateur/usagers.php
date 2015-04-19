@@ -1,7 +1,14 @@
 <?php
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: Login.php');
+	exit();
+}
+?>
+<?php
 $bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
 $requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
-echo('
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -44,11 +51,10 @@ echo('
             <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
-                        <li ><a href="../Connexion.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-                    </ul>
-                    
+                    <ul class="nav navbar-nav navbar-right">          
+                <li ><a href="../m2l/Login.php"> [ <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> ] Deconnexion <img src="../m2l/img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                  </ul>
+
                 </div><!--/.nav-collapse -->
             </div>
         </div>
@@ -95,7 +101,7 @@ echo('
         </thead>
         
         <tbody>
-            ');
+            <?php
             while ($donnee = $requete->fetch())
             {
                 if($donnee['level']== 2){
@@ -112,8 +118,7 @@ echo('
             </tr>
             ');
             }
-            echo('
-            
+            ?>
         </tbody>
         
      <div class="control-group">
@@ -122,5 +127,3 @@ echo('
      </div>
 </body>
 </html>
-');
-?>

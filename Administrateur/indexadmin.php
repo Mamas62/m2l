@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: Login.php');
+	exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -40,10 +47,10 @@
                         <li><a href=../Administrateur/reservation.php>Réservations</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
-                        <li ><a href="../Connexion.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
-                    </ul>
+                    <ul class="nav navbar-nav navbar-right">          
+            <li ><a href="../m2l/Login.php"> [ <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> ] Deconnexion <img src="../m2l/img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+              </ul>
+              </div>
                     
                 </div><!--/.nav-collapse -->
             </div>
@@ -59,8 +66,8 @@
                     <h1 class="text-center" style="margin-bottom: 40px;">Page d'accueil Administrateur</h1>
                 </div>
                 
-                <div class="col-md-9 text-center">
-                    <p class="lead">Bienvenue User1 !</p>
+                <div class="col-md-12 text-center">
+              <h3>Bienvenue <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> !</h3>
                 </div>                
             </div>
             <div class="row">
