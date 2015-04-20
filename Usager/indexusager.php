@@ -55,8 +55,7 @@
                 </div>
         
       <div class="starter-template text-center">
-        <h1> <br> </h1>
-        <h2>Page d'accueil usager</h2>
+        <h1 class="text-center" style="margin-bottom: 40px;">Page d'accueil Usager</h1>
         <p class="lead text-center">Bonjour Gergory Leplafond !</p>
       </div>
 
