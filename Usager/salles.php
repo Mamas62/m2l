@@ -42,7 +42,7 @@ echo('
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="../Login.php">M2L</a>
+            <a class="navbar-brand" href="../apresLogin.php">M2L</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
