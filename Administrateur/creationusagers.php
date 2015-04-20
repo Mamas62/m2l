@@ -113,9 +113,15 @@ if (!isset($_SESSION['pseudo'])) {
           <td><input type="password" name="password2"></td>
         </tr>
         <tr align="center">
-          <td>Droits (Indiquer 2 pour un compte admin.) :</td>
-          <td><input type="text" name="level"></td>
+            <td>Droits :</td>
+            <td>
+        <select name="level" >
+             <option value="0">User</option>
+             <option value="2">Admin</option>
+        </select>
+            </td>
         </tr>
+        
 
         <tr align="center">
           <td colspan="2"><input type="submit" value="Insérer"></td>
