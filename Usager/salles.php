@@ -65,8 +65,8 @@ echo('
                 </div>
 
       <div class="starter-template text-center">
-        <h1> <br> </h1>
-        <h2>Salles</h2>
+        <h1 class="text-center" style="margin-bottom: 40px;">Salles</h1>
+        
       </div>
 
     </div><!-- /.container -->

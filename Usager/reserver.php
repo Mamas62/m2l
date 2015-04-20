@@ -5,10 +5,10 @@ echo('
 <!DOCTYPE html>
 <html lang="fr">');
 
-if(isset($_POST["validation"]))
-{
-	echo ('<meta http-equiv="refresh" content="0;url="http://localhost/m2lProjet/Usager/reserver.php" ');
-}
+
+
+
+
 
 echo('
 
@@ -73,10 +73,10 @@ echo('
         <h2>Page Reservation</h2>
         
       </div>
-        <form method="post" action="index.php" role="form">
+        <form method="post" action="reserver.php" role="form">
 				<div class="form-group container jumbotron text-center">
 					<label for="choixSalle">Salle:</label>
-					<select class="input-sm" id="choixSalle">
+					<select class="input-sm" name="choixSalle" id="choixSalle">
 						<option value="amphitheatre">Amphithéâtre</option>
 						<option value="baccarat">Baccarat (Réunion)</option>
 						<option value="corbin">Corbin (Réunion)</option>
@@ -90,10 +90,10 @@ echo('
 					</select>
 					
 					
-					<label for="choixType">Type:</label>
-					<select class="input-sm" id="choixType">
-						<option value="amphitheatre">Régulier</option>
-						<option value="reunion_etage">Occasionnel</option>
+					<label for="choixTypeId">Type:</label>
+					<select class="input-sm" name="choixType" id="choixTypeId">
+						<option value="regulier">Régulier</option>
+						<option value="occasionnel">Occasionnel</option>
 					</select>
 					
 					
@@ -101,16 +101,16 @@ echo('
 					
                                         
                                         <label for="date_deb_reserv">Date debut</label>
-                                        <input class="input-sm" type="date" id="date_deb_reserv">
+                                        <input class="input-sm" type="date" name="dateDeDebut" id="date_deb_reserv">
                                         
                                          <label for="heure_debut">Heure début</label>
-                                         <input class="input-sm" type="time" id="heure_debut">
+                                         <input class="input-sm" type="time" name="heureDeDebut" id="heure_debut">
 										 
 										 <label for="date_fin_reserv">Date fin</label>
-                                        <input class="input-sm" type="date" id="date_fin_reserv">
+                                        <input class="input-sm" type="date" name="dateDeFin" id="date_fin_reserv">
                                          
                                          <label for="heure_fin">Heure fin</label>
-                                         <input class="input-sm" type="time" id="heure_fin">
+                                         <input class="input-sm" type="time" name="heureDeFin" id="heure_fin">
 										 
 										 
 										 </br>
@@ -146,21 +146,23 @@ echo('
 			  
 			  </br>
 			   <label for="date_fin_periodicite">Date de fin de périodicité :</label>
-               <input class="input-sm" type="date" id="date_fin_periodicite">
+               <input class="input-sm" type="date" id="date_fin_periodicite" name="finPeriodicite">
 			  
 			  </div>
 			  
-        </form>
+        
 		
 		
             
             <div class="form-group container jumbotron text-center">
 			
 				<label for="breveDescription">Brève description</label>
-               <textarea class="form-control " id="breveDescription" rows="1"></textarea>
+               <textarea class="form-control " name="descriptionBreve" id="breveDescription" rows="1"></textarea>
+			   
+			   
                 
                 <label for="description">Description</label>
-               <textarea class="form-control " id="description" rows="3"></textarea>
+               <textarea class="form-control " name="descriptionTotale" id="description" rows="3"></textarea>
                 
             </div>
             
@@ -169,6 +171,94 @@ echo('
                 <input type="submit" value="valider" class="btn btn-default" name="validation">
                 
             </div>
+			 
+			 
+			
+			</form>
+			
+			');
+			 
+			 //récupération de la brève description
+			 if( isset ($_POST['descriptionBreve']))
+			{
+				$descriptionBreve=$_POST['descriptionBreve'];
+				
+			}
+			
+			//récupération de la description
+			 if( isset ($_POST['descriptionTotale']))
+			{
+				$description=$_POST['descriptionTotale'];
+				
+			}
+			
+			//récupération de la salle
+			 if( isset ($_POST['choixSalle']))
+			{
+				$salle=$_POST['choixSalle'];
+				
+			}
+			
+			//récupération du type
+			 if( isset ($_POST['choixType']))
+			{
+				$type=$_POST['choixType'];
+				
+			}
+			
+			//récupération de la date de début
+			if( isset ($_POST['dateDeDebut']))
+			{
+				$dateDebut=$_POST['dateDeDebut'];
+				
+			}
+			
+			//récupération de l'heure de début 
+			if( isset ($_POST['heureDeDebut']))
+			{
+				$heureDebut=$_POST['heureDeDebut'];
+				
+			}
+			
+			//récupération de la date de fin
+			if( isset ($_POST['dateDeFin']))
+			{
+				$dateFin=$_POST['dateDeFin'];
+				
+			}
+			
+			//récupération de l'heure de fin
+			if( isset ($_POST['heureDeFin']))
+			{
+				$heureFin=$_POST['heureDeFin'];
+				
+			}
+			
+			//récupération de la confirmation
+			if( isset ($_POST['confirmation']))
+			{
+				$confirmation=$_POST['confirmation'];
+				
+			}
+			
+			//récupération de la periodicite
+			if( isset ($_POST['periodicite']))
+			{
+				$periodicite=$_POST['periodicite'];
+				
+			}
+			
+			//récupération de la date de fin de périodicité
+			if( isset ($_POST['finPeriodicite']))
+			{
+				$finPeriodicite=$_POST['finPeriodicite'];
+				
+			}
+			
+			echo $finPeriodicite;
+			
+			echo('
+			
             
 
     </div><!-- /.container -->
