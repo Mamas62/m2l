@@ -73,7 +73,7 @@ if (!isset($_SESSION['pseudo'])) {
               <h2><strong>Bienvenue sur le site de la Maison des Ligues de Lorraine</strong>  </h2>
           </div>
           <div class="col-md-12 text-center">
-              <h4><a href="http://localhost/PPE/m2lperso/m2l/monAPK/appliFredi.apk">TELECHARGER L'APPLICATION</a></h4>
+              <h4><a href="http://sio.malrauxbethune.fr/2015/lela/monAPK/appliFredi.apk">TELECHARGER L'APPLICATION</a></h4>
           </div>
           
           <div class="col-md-12 text-center">
