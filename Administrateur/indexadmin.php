@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['pseudo'])) {
-	header ('Location: Login.php');
+	header ('Location: ../Login.php');
 	exit();
 }
 ?>

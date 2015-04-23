@@ -1,13 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['pseudo'])) {
-	header ('Location: Login.php');
+	header ('Location: ../Login.php');
 	exit();
 }
 ?>
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
-$requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
+$requete = $bdd->query('SELECT id, level, name, email FROM mrbs_users');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -113,8 +113,8 @@ $requete = $bdd->query('SELECT level, name, email FROM mrbs_users');
                     $maVar = "User";
                 }
                 echo('
-            <tr>
-            <td>'.'</td>
+            <tr>               
+            <td>'."<a href=\"modificationusagers.php?idPersonne=".$donnee['id']."&levelPersonne=".$donnee['level']."&namePersonne=".$donnee['name']."&emailPersonne=".$donnee['email']."\">Modifier</a></div>"." - "."<a href=\"suppressionusagers.php?idPersonne2=".$donnee['id']."&namePersonne2=".$donnee['name']."\">Supprimer</a></div>".'</td>          
             <td>'.$maVar.'</td>
             <td>'.$donnee['name'].'</td>
             <td>'.$donnee['email'].'</td>
