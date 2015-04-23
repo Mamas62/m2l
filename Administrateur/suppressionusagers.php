@@ -112,9 +112,8 @@ if (!isset($_SESSION['pseudo'])) {
      </div>
         
         <div class="col-md-12 text-center">
-            
       <form name="suppression" method="post" >
-            Voulez-vous vraiment supprimer l'usager : <?php echo $name2; ?>  
+            Voulez-vous vraiment supprimer l'usager : <?php echo $name2; ?>             
             <br><input type="submit" name="Confirmer" value="Confirmer" />
         </form>
 
@@ -132,7 +131,6 @@ if (!isset($_SESSION['pseudo'])) {
       if($sql)
       {
         echo '<p style="color:#40A468;">Suppression correctement effectuée.</p>';
-        
       }
       else
       {
