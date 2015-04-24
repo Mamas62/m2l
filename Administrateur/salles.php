@@ -128,7 +128,7 @@
                 <select name="usagers" class="form-control">
                 <option value="1">Domaine 1</option>
                 <option value="2">Domaine 2</option>
-                <option value="3">DOmaine 3</option>
+                <option value="3">Domaine 3</option>
                 </select>
                 
                 <br/>
