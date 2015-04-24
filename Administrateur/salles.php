@@ -78,28 +78,57 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    
+
         <div class="container theme-showcase" role="main">
+            <FORM ACTION="#">
+        <INPUT TYPE="SUBMIT" VALUE="Ajouter un domaine">
+        <INPUT TYPE="SUBMIT" VALUE="Ajouter une salle"></FORM>
+            
+            <table class="table table-hover text-center" style="margin-top: 20px;">
+            <thead>
+            <tr class="success">
+                <th class="text-capitalize text-center">Action</th>
+            <th class="text-capitalize text-center">Nom</th>
+            <th class="text-capitalize text-center">Enabled</th>
+            <th class="text-capitalize text-center">Description</th>
+            <th class="text-capitalize text-center">Maximum de personnes</th>
+            <th class="text-capitalize text-center">Courriels des responsables</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+
+            <tr> 
+            <td>Modifier - Supprimer</td>
+            <td>Multimédia</td>
+            <td>V</td>
+            <td></td>
+            <td>25</td>
+            <td></td>
+            </tr>
+            
+            <tr>  
+            <td>Modifier - Supprimer</td>
+            <td>Salle informatique</td>
+            <td>V</td>
+            <td></td>
+            <td>15</td>
+            <td></td>
+            </tr>
+
+        </tbody>
             
             <div class="control-group">
                 
-                <br/>
-                
-                <label for="choixJour">Choix du jour :</label>
-                <input type="text" class="form-control form-fix" id="choixJour" />
-                
-                <br/>
 
-                <label class="control-label"for="usagers">
-                Choix de l'utilisateur :
+                <br><label class="control-label"for="usagers">
+                Choix du domaine :
                 </label>
 
                 <select name="usagers" class="form-control">
-                <option value="1">User1</option>
-                <option value="2">Tony Stark</option>
-                <option value="3">Steve Rogers</option>
-                <option value="4">Clin Barton</option>
-                <option value="5">Bruce Banner</option>
+                <option value="1">Domaine 1</option>
+                <option value="2">Domaine 2</option>
+                <option value="3">DOmaine 3</option>
                 </select>
                 
                 <br/>
