@@ -334,7 +334,7 @@ echo('
 				$startTime = strtotime($_POST['dateDeDebut']) + convertirHeuresEnUnix($_POST['heureDeDebut']) + convertirMinutesEnUnix($_POST['heureDeDebut']);
 				$endTime = strtotime($_POST['dateDeFin']) + convertirHeuresEnUnix($_POST['heureDeFin']) + convertirMinutesEnUnix($_POST['heureDeFin']);
 				
-               $req = $bdd->query('INSERT INTO mrbs_entry(start_time, end_time, entry_type, repeat_id, room_id, create_by, name, description, status) VALUES('.$startTime.','.$endTime.', 0,'.$periodicite.', 1, "Alexandre","'.$_POST['descriptionBreve'].'","'.$_POST['descriptionTotale'].'", 0)');
+               $req = $bdd->query('INSERT INTO mrbs_entry(id, start_time, end_time, entry_type, repeat_id, room_id, create_by, name, description, status) VALUES('.$_SESSION['id'].','.$startTime.','.$endTime.', 0,'.$periodicite.', 1, "Alexandre","'.$_POST['descriptionBreve'].'","'.$_POST['descriptionTotale'].'", 0)');
 				
             }
                         
