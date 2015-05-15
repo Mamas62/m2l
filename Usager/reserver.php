@@ -1,5 +1,26 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: ../Login.php');
+	exit();
+}
+
+
+include 'fonctions_convertion_heures.php';
+
+
+
+$bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+
+$insert = $bdd->query('INSERT ');
+
+
+
+
+        
+
+
 echo('
 
 <!DOCTYPE html>
@@ -52,8 +73,8 @@ echo('
             <li class="active"><a href="../Usager/reserver.php">Réserver</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Grégory Leplafond(user)</a></li>
-          <li ><a href="../Connexion.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> '); echo htmlentities(trim($_SESSION['pseudo']));echo('</a></li>
+           <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -69,31 +90,50 @@ echo('
           <div class="col-md-3">
                     <img src="../img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L">
                 </div>
-        <h1> <br> </h1>
-        <h2>Page Reservation</h2>
+        <h1 class="text-center" style="margin-bottom: 40px;">Page Réservations</h1>
         
       </div>
+	  
+	  </br>
+	  </br>
+	  </br>
+	  </br>
+	  
         <form method="post" action="reserver.php" role="form">
 				<div class="form-group container jumbotron text-center">
 					<label for="choixSalle">Salle:</label>
-					<select class="input-sm" name="choixSalle" id="choixSalle">
-						<option value="amphitheatre">Amphithéâtre</option>
-						<option value="baccarat">Baccarat (Réunion)</option>
-						<option value="corbin">Corbin (Réunion)</option>
-						<option value="daum">Daum (Réunion)</option>
-						<option value="galle">Gallé (Réunion)</option>
-						<option value="lamour">Lamour (Réunion)</option>
-						<option value="longwy">Longwy (Réunion)</option>
-						<option value="majorelle">Majorelle (Réunion)</option>
-						<option value="multimedia">Multimédia</option>
-						<option value="reunion_etage">Réunion d étage</option>
-					</select>
+					<select class="input-sm" name="choixSalle" id="choixSalle">');
+
+            try
+                    {
+                        $req = $bdd->query('SELECT id, room_name FROM mrbs_room');
+                        $premierResultat = true;
+                        while ($res = $req->fetch())
+                        {
+                            if ($premierResultat)
+                            {
+                                echo '<option value="' . $res['id'] . '" selected>' . $res['room_name'] . '</option>';
+                                $premierResultat = false;
+                            }
+                            else
+                                echo '<option value="' . $res['id'] . '">' . $res['room_name'] . '</option>';
+                        }
+                    }
+                    catch (PDOException $e)
+                    {
+                        die('[Erreur MySQL] ' . $e->getMessage());
+                        
+                    }
+						
+
+
+					echo('</select>
 					
-					
+					</br>
 					<label for="choixTypeId">Type:</label>
 					<select class="input-sm" name="choixType" id="choixTypeId">
-						<option value="regulier">Régulier</option>
-						<option value="occasionnel">Occasionnel</option>
+						<option value="I">Régulier</option>
+						<option value="E">Occasionnel</option>
 					</select>
 					
 					
@@ -102,21 +142,30 @@ echo('
                                         
                                         <label for="date_deb_reserv">Date debut</label>
                                         <input class="input-sm" type="date" name="dateDeDebut" id="date_deb_reserv">
+										
+										</br>
                                         
                                          <label for="heure_debut">Heure début</label>
                                          <input class="input-sm" type="time" name="heureDeDebut" id="heure_debut">
 										 
+										 </br>
+										 
 										 <label for="date_fin_reserv">Date fin</label>
                                         <input class="input-sm" type="date" name="dateDeFin" id="date_fin_reserv">
+										
+										</br>
                                          
                                          <label for="heure_fin">Heure fin</label>
                                          <input class="input-sm" type="time" name="heureDeFin" id="heure_fin">
 										 
+										 </br>
+										 
 										 
 										 </br>
 										 <label for="confirmation">Etat de la confirmation:</label>
-										 <input class="input-sm" type="radio" name="confirmation" value="confirme" id="cofirmation">Confirmé
-										 <input class="input-sm" type="radio" name="confirmation" value="provisoire" id="cofirmation">Provisoire
+										 </br>
+										 <input class="input-sm" type="radio" name="confirmation" value="0" id="cofirmation" checked>Confirmé
+										 <input class="input-sm" type="radio" name="confirmation" value="4" id="cofirmation">Provisoire
 										 
                                          
                                          <div class="form-group">
@@ -136,16 +185,33 @@ echo('
 			  <div class="form-group container jumbotron text-center">
 			  
 			  <label for="typePeriodicite">Type de périodicité :</label>
-			  <input type="radio" name="periodicite" value="aucune" id="typePeriodicite">Aucune
-			  <input type="radio" name="periodicite" value="jour" id="typePeriodicite">Jour
-			  <input type="radio" name="periodicite" value="semaine" id="typePeriodicite">Semaine
-			  <input type="radio" name="periodicite" value="mois" id="typePeriodicite">Mois
-			  <input type="radio" name="periodicite" value="annee" id="typePeriodicite">Annee
-			  <input type="radio" name="periodicite" value="moisJourSemaine" id="typePeriodicite">Mois, même jour semaine
-			  <input type="radio" name="periodicite" value="nSemaine" id="typePeriodicite">toutes les n semaines
+			  </br>
+			  <input type="radio" name="periodicite" value="0" id="typePeriodicite" checked>Aucune
+			  </br>
+			  
+			  <input type="radio" name="periodicite" value="1" id="typePeriodicite">Jour
+			  </br>
+			  
+			  <input type="radio" name="periodicite" value="2" id="typePeriodicite">Semaine
+			  </br>
+			  
+			  <input type="radio" name="periodicite" value="3" id="typePeriodicite">Mois
+			  
+			  </br>
+			  
+			  <input type="radio" name="periodicite" value="4" id="typePeriodicite">Annee
+			  
+			  </br>
+			  
+			  <input type="radio" name="periodicite" value="5" id="typePeriodicite">Mois, même jour semaine
+			  
+			  </br>
+			  
+			  <input type="radio" name="periodicite" value="6" id="typePeriodicite">toutes les n semaines
 			  
 			  </br>
 			   <label for="date_fin_periodicite">Date de fin de périodicité :</label>
+			   </br>
                <input class="input-sm" type="date" id="date_fin_periodicite" name="finPeriodicite">
 			  
 			  </div>
@@ -179,56 +245,56 @@ echo('
 			');
 			 
 			 //récupération de la brève description
-			 if( isset ($_POST['descriptionBreve']))
+			 if( isset ($_POST['descriptionBreve']) && $_POST['descriptionBreve']!= "")
 			{
 				$descriptionBreve=$_POST['descriptionBreve'];
 				
 			}
 			
 			//récupération de la description
-			 if( isset ($_POST['descriptionTotale']))
+			 if( isset ($_POST['descriptionTotale']) && $_POST['descriptionTotale']!= "")
 			{
 				$description=$_POST['descriptionTotale'];
 				
 			}
 			
 			//récupération de la salle
-			 if( isset ($_POST['choixSalle']))
+			 if( isset ($_POST['choixSalle']) && $_POST['choixSalle']!= "")
 			{
 				$salle=$_POST['choixSalle'];
 				
 			}
 			
 			//récupération du type
-			 if( isset ($_POST['choixType']))
+			 if( isset ($_POST['choixType']) && $_POST['choixType']!= "")
 			{
 				$type=$_POST['choixType'];
 				
 			}
 			
 			//récupération de la date de début
-			if( isset ($_POST['dateDeDebut']))
+			if( isset ($_POST['dateDeDebut']) && $_POST['dateDeDebut']!= "")
 			{
 				$dateDebut=$_POST['dateDeDebut'];
 				
 			}
 			
 			//récupération de l'heure de début 
-			if( isset ($_POST['heureDeDebut']))
+			if( isset ($_POST['heureDeDebut']) && $_POST['heureDeDebut']!= "")
 			{
 				$heureDebut=$_POST['heureDeDebut'];
 				
 			}
 			
 			//récupération de la date de fin
-			if( isset ($_POST['dateDeFin']))
+			if( isset ($_POST['dateDeFin']) && $_POST['dateDeFin']!= "")
 			{
 				$dateFin=$_POST['dateDeFin'];
 				
 			}
 			
 			//récupération de l'heure de fin
-			if( isset ($_POST['heureDeFin']))
+			if( isset ($_POST['heureDeFin']) && $_POST['heureDeFin']!= "")
 			{
 				$heureFin=$_POST['heureDeFin'];
 				
@@ -242,7 +308,7 @@ echo('
 			}
 			
 			//récupération de la periodicite
-			if( isset ($_POST['periodicite']))
+			if( isset ($_POST['periodicite']) && $_POST['periodicite']!= "")
 			{
 				$periodicite=$_POST['periodicite'];
 				
@@ -255,7 +321,26 @@ echo('
 				
 			}
 			
+            if (isset($_POST['validation']) && ($_POST['dateDeDebut']=="" || $_POST['heureDeDebut']=="" || $_POST['dateDeFin']=="" || $_POST['heureDeFin']==""  ))
+            {
+				
+				
+				
+                echo "veuillez remplir tous les champs";
+            }
+            
+            else 
+            {
+				$startTime = strtotime($_POST['dateDeDebut']) + convertirHeuresEnUnix($_POST['heureDeDebut']) + convertirMinutesEnUnix($_POST['heureDeDebut']);
+				$endTime = strtotime($_POST['dateDeFin']) + convertirHeuresEnUnix($_POST['heureDeFin']) + convertirMinutesEnUnix($_POST['heureDeFin']);
+				
+               $req = $bdd->query('INSERT INTO mrbs_entry(start_time, end_time, entry_type, repeat_id, room_id, create_by, name, description, status) VALUES('.$startTime.','.$endTime.', 0,'.$periodicite.', 1, "Alexandre","'.$_POST['descriptionBreve'].'","'.$_POST['descriptionTotale'].'", 0)');
+				
+            }
+                        
 			echo $finPeriodicite;
+			
+			
 			
 			echo('
 			
@@ -272,5 +357,7 @@ echo('
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </body>
 </html> ');
+
+
 
 ?>

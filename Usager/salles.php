@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: ../Login.php');
+	exit();
+}
+
+
 $bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
 
 $requete = $bdd->query('SELECT nomAnimateur, prenomAnimateur, room_name, capacity FROM mrbs_reservation r INNER JOIN mrbs_room ro ON r.idSalle=ro.id ');
@@ -52,8 +59,8 @@ echo('
             <li><a href="../Usager/reserver.php">Réserver</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Grégory Leplafond(user)</a></li>
-          <li ><a href="../Connexion.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> '); echo htmlentities(trim($_SESSION['pseudo']));echo('</a></li>
+           <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

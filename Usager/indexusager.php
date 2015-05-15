@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: ../Login.php');
+	exit();
+}
+
+echo ('
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -41,8 +50,8 @@
             <li><a href="../Usager/reserver.php">Réserver</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Grégory Leplafond(user)</a></li>
-          <li ><a href="../Connexion.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span>'); echo htmlentities(trim($_SESSION['pseudo']));echo('</a></li>
+           <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -55,7 +64,7 @@
                 </div>
         
       <div class="starter-template text-center">
-        <h1 class="text-center" style="margin-bottom: 40px;">Page d'accueil Usager</h1>
+        <h1 class="text-center" style="margin-bottom: 40px;">Page accueil Usager</h1>
         <p class="lead text-center">Bonjour Gergory Leplafond !</p>
       </div>
 
@@ -71,4 +80,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </body>
-</html>
+</html>');
+
+?>
