@@ -57,8 +57,26 @@ if (!isset($_SESSION['pseudo'])) {
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse"> 
           <ul class="nav navbar-nav">
-              <li><a href="Administrateur/indexadmin.php">Partie Administrateur</a></li>
-              <li><a href="Usager/indexusager.php">Partie Utilisateur</a></li>          
+              <?php    
+              $Pseudo = $_SESSION['pseudo'];
+              $bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+              $req = $bdd->query("SELECT level FROM mrbs_users WHERE name = '".$Pseudo."'");
+             
+                while ($donneesUser = $req->fetch())
+                {
+                   if ($donneesUser['level'] == 2)  
+                   {        
+                  echo(' <li><a href="Administrateur/indexadmin.php">Partie Administrateur</a></li> ');
+                   }
+              
+              else
+                  {
+                  echo(' <li><a href="Usager/indexusager.php">Partie Utilisateur</a></li> ');      
+              }
+                }
+              ?>
+              <!--<li><a href="Administrateur/indexadmin.php">Partie Administrateur</a></li>
+              <li><a href="Usager/indexusager.php">Partie Utilisateur</a></li>-->          
           </ul>
             
         <ul class="nav navbar-nav navbar-right">          
