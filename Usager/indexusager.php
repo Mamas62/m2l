@@ -65,7 +65,7 @@ echo ('
         
       <div class="starter-template text-center">
         <h1 class="text-center" style="margin-bottom: 40px;">Page accueil Usager</h1>
-        <p class="lead text-center">Bonjour Gergory Leplafond !</p>
+        <h3>Bienvenue '); echo htmlentities(trim($_SESSION['pseudo']));  echo('</h3>
       </div>
 
     </div><!-- /.container -->
