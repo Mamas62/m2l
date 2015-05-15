@@ -32,24 +32,30 @@ if (!isset($_SESSION['pseudo'])) {
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </head>
 
-  <body>
-
-    <div class="container">
+  <body> 
+      
+      <div class="container">
         
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
             <li><a class="navbar-brand" href="Login.php">M2L</a></li> 
         </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse"> 
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse"> 
           <ul class="nav navbar-nav">
               <li><a href="Administrateur/indexadmin.php">Partie Administrateur</a></li>
               <li><a href="Usager/indexusager.php">Partie Utilisateur</a></li>          
@@ -60,9 +66,9 @@ if (!isset($_SESSION['pseudo'])) {
           </ul>
           </div>
                  
-        </div><!--/.container-fluid -->
+        </div><!--/.container-fluid-->
  
-      </div>
+      </div> 
         <div class="row">
         <div class="col-md-1 img-responsive">
             <img src="../m2l/img/LogoM2L.jpg" width="200" height="200" alt="Logo M2L"> 

@@ -124,10 +124,6 @@ $requete = $bdd->query('SELECT id, level, name, email FROM mrbs_users');
             ?>
         </tbody>
         
-     <div class="control-group">
-        <input type="hidden" name="filtrer" value="ok" />
-        <button type="submit" class="btn btn-default">Filtrer</button>
-     </div>
         
         <FORM ACTION="../Administrateur/creationusagers.php">
         <INPUT TYPE="SUBMIT" VALUE="Ajouter un nouvel utilisateur"></FORM>
