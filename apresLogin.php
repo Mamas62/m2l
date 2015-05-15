@@ -4,6 +4,18 @@ if (!isset($_SESSION['pseudo'])) {
 	header ('Location: Login.php');
 	exit();
 }
+$Pseudo = $_SESSION['pseudo'];
+   $bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+    $reqId = $bdd->query("SELECT id FROM mrbs_users WHERE name = '".$Pseudo."'");
+             
+    while ($donneesId = $reqId->fetch())
+    {
+            $_SESSION['id']=$donneesId['id'];
+            
+    }
+    
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -58,8 +70,8 @@ if (!isset($_SESSION['pseudo'])) {
         <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse"> 
           <ul class="nav navbar-nav">
               <?php    
-              $Pseudo = $_SESSION['pseudo'];
-              $bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+              
+              
               $req = $bdd->query("SELECT level FROM mrbs_users WHERE name = '".$Pseudo."'");
              
                 while ($donneesUser = $req->fetch())
