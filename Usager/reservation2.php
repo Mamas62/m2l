@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/add.css" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -61,13 +62,13 @@
               <h1>Voir les réservations :</h1>
              
 </div>   
-                            <div class="col-md-11 text-right">
-                   <h3>  <strong>
+                            <div class="col-md-11 text-right" id="affichagereservation">
+                    <strong>
                         Affichage en fonction de l'usager connecté
                   
                      <br>
                   L'affichage peut être trié par colonne par l'usager.
-                       </strong> </h3>
+                       </strong> 
                     
                 </div>
       </div> 

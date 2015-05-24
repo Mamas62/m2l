@@ -68,20 +68,39 @@
                 
                 
                
-                    <p class="lead"></p>
-                 <p class="lead">    <label for="choixSalle">Choix de la salle:</label>
-                     
-					<select class="input-sm" id="choixSalle">
-						<option value="amphitheatre">Amphithéâtre</option>
-						<option value="baccarat">Baccarat (Réunion)</option>
-						<option value="corbin">Corbin (Réunion)</option>
-						<option value="daum">Daum (Réunion)</option>
-						<option value="galle">Gallé (Réunion)</option>
-						<option value="lamour">Lamour (Réunion)</option>
-						<option value="longwy">Longwy (Réunion)</option>
-						<option value="majorelle">Majorelle (Réunion)</option>
-						<option value="multimedia">Multimédia</option>
-						<option value="reunion_etage">Réunion d'étage</option>
+                     <p class="lead"></p>
+                    <p class="lead">
+                        <label for="choixSalle">
+                            Choix de l'utilisateur :
+                        </label>
+                        <select class="input-sm" id="choixSalle">
+						  <?php
+try
+{
+	// On se connecte à MySQL
+	$bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+}
+catch(Exception $e)
+{
+	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+}
+
+// Si tout va bien, on peut continuer
+
+// On récupère tout le contenu de la table jeux_video
+$reponse = $bdd->query('SELECT * FROM mrbs_users');
+while ($donnees = $reponse->fetch())
+{
+?>
+   <option value=""><?php echo$donnees['name'] ?></option>
+                 <?php
+                 }
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
+
 					</select>
                  </p>
                     
@@ -89,18 +108,42 @@
                     <p class="lead"></p>
                     <p class="lead">
                         <label for="choixUser">
-                            Choix de l'utilisateur:
+                            Choix de la salle:
                         </label>
                         <select class="input-sm" id="choixUser">
-                            <option value='user1'>User 1</option>
-                            <option value='user2'>User 2</option>
-                            <option value='user3'>User 3</option>
+                            <?php
+try
+{
+	// On se connecte à MySQL
+	$bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
+}
+catch(Exception $e)
+{
+	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+}
+
+// Si tout va bien, on peut continuer
+
+// On récupère tout le contenu de la table jeux_video
+$reponse = $bdd->query('SELECT * FROM mrbs_room');
+while ($donnees = $reponse->fetch())
+{
+?>
+   <option value=""><?php echo$donnees['room_name'] ?></option>
+                 <?php
+                 }
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
+
                         </select>
                     </p>
                     
                     
                     
-                    
+                   
                     <br>
                 <br>
                 <br>  
