@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: ../Login.php');
+	exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -41,8 +49,8 @@
             
                     </ul>
                       <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
-                        <li ><a href="../Connexion.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>  <?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a></li>
+                        <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
                     </ul>
                     
                 </div><!--/.nav-collapse -->
@@ -112,16 +120,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
                         </label>
                         <select class="input-sm" id="choixUser">
                             <?php
-try
-{
-	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost;dbname=mrbs;charset=utf8', 'root', '');
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
+
 
 // Si tout va bien, on peut continuer
 
@@ -140,7 +139,12 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 
                         </select>
                     </p>
-                    
+                    <?php
+$req = $bdd->prepare('SELECT start_time,end_time,room_id,create_by,name,description '
+        . 'FROM mrbs_entry '
+        . 'WHERE create_by = ? AND room_id=? ');
+$req->execute(array($_GET['room_id'],$_GET['create_by']));
+?>
                     
                     
                    

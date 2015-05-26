@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['pseudo'])) {
+	header ('Location: ../Login.php');
+	exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -41,7 +50,7 @@
                     </ul>
                     
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User1 (Administrateur)</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo htmlentities(trim($_SESSION['pseudo'])); ?></a></li>
                         <li ><a href="../Login.php">Deconnexion <img src="../img/logout.jpg" alt=" Se déconnecter" width="15" height="17"/></a></li>
                     </ul>
                     
